@@ -44,8 +44,8 @@ def rotate(
     return cv.warpAffine(image, rot_mat, (int(round(height)), int(round(width))), borderValue=background)
 
 pytesseract.pytesseract.tesseract_cmd = "C:\\Program Files\\Tesseract-OCR\\tesseract.exe"
-#url = "https://192.168.0.13:8080/video"
-url=0
+url = "https://192.168.0.13:8080/video"
+#url=0
 #url = "http://10.30.46.83:8080/video"
 
 capture = cv.VideoCapture(url)
@@ -72,7 +72,7 @@ capture_image_resized = rescaleframe(captured_image,scale=1)
 cv.imshow("captured_image",capture_image_resized)
 ################# GRAY ##########################
 while True:
-    if cv.waitKey(20) & 0XFF == ord("s"):  # pencereyi kapatır.
+    if cv.waitKey(20) & 0XFF == ord("a"):  # pencereyi kapatır.
         cv.destroyAllWindows()
         break
 
@@ -81,7 +81,7 @@ cv.imshow("captured_image",capture_image_resized)
 cv.imshow("Gray",gray)
 ############## THICKEN LETTERS #####################
 while True:
-    if cv.waitKey(20) & 0XFF == ord("d"):  # pencereyi kapatır.
+    if cv.waitKey(20) & 0XFF == ord("a"):  # pencereyi kapatır.
         cv.destroyAllWindows()
         break
 
@@ -93,7 +93,7 @@ cv.imshow("Thicken Letters",eroded)
 cv.imwrite("Thicken Letters.jpg",eroded)
 ############ REMOVE SHADOW ####################
 while True:
-    if cv.waitKey(20) & 0XFF == ord("f"):  # pencereyi kapatır.
+    if cv.waitKey(20) & 0XFF == ord("a"):  # pencereyi kapatır.
         cv.destroyAllWindows()
         break
 
@@ -122,7 +122,7 @@ cv.imshow('shadows_out', result)
 cv.imshow('shadows_out_norm', result_norm)
 
 while True:
-    if cv.waitKey(20) & 0XFF == ord("g"):  # pencereyi kapatır.
+    if cv.waitKey(20) & 0XFF == ord("a"):  # pencereyi kapatır.
         cv.destroyAllWindows()
         break
 ################### IMAGE TO TEXT ########################
